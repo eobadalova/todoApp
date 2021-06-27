@@ -1,38 +1,118 @@
-.App {
+
+body {
+  
+  background: url("forest.jpg");
+}
+#todo-list {
+  
+  margin: 100px auto;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 55px black;
+  padding: 10px;
+  position: absolute;
+  height:85%;
+  width: 30pc;
+  top:0;
+  right:0;
+  left:0;
+  bottom: 0;
+  border-radius: 5px;
+}
+
+h1 {
   text-align: center;
+  
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.todo {
+  background-color: rgba(255,255,255, 0.2);
+  border-radius: 5px;
+  box-shadow: 2px 2px 15px rgb(43, 43, 43);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form, .todo {
+  padding: 3px;
+  margin-bottom: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+form input {
+  padding: 4px 8px;
+  flex-grow: 1;
+  margin-right: 16px;
+}
+.todo {
   display: flex;
   flex-direction: column;
+}
+
+button {
+  font-size: 16px;
+  background-color: rgb(217, 60, 35);
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  box-shadow: 2px 4px 12px rgb(43, 43, 43);
+}
+button:hover {
+  background-color: rgb(207, 52, 28);
+}
+button:active {
+  background-color: rgb(130,35,21);
+}
+button:focus {
+  outline: 0;
+}
+input[type='text'] { 
+  font-size: 18px;
+  
+}
+.todo input[type="checkbox"] {
+  transform: scale(1.5) translateY(1px);
+  margin: 0 16px 0 0;
+  cursor: pointer;
+
+}
+.todo-text input {
+  padding: 4px;
+}
+.todo-text {
+  font-size: 20px;
+  
+  
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  padding: 10px;
+}
+.todo-completed {
+  display: flex;
+  margin: 10px 0;
+}
+.todo-actions {
+  display: flex;
+  
+  right: 0;
+  margin-left: auto
 }
 
-.App-link {
-  color: #61dafb;
+.icon {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+  color:rgb(182, 41, 20);
+  padding-left: 10px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon-add {
+
+
+  color:rgb(255, 255, 255);
+  font-size: 30px;
+
 }
