@@ -38,7 +38,7 @@ const App = () => {
 
 
     if (newTodo.text == "") {
-      alert("Zadejte text úkolu");
+      
       return;
     }
     setTodos([...todos].concat(newTodo));
