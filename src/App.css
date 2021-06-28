@@ -28,6 +28,12 @@ h1 {
   border-radius: 5px;
   box-shadow: 2px 2px 15px rgb(43, 43, 43);
 }
+
+.todo:hover {
+  transform: scale(1.01);
+  background-color: rgba(255,255,255, 0.3);
+  
+}
 form, .todo {
   padding: 3px;
   margin-bottom: 10px;
@@ -57,27 +63,32 @@ button {
   cursor: pointer;
   box-shadow: 2px 4px 12px rgb(43, 43, 43);
 }
-button:hover {
-  background-color: rgb(207, 52, 28);
-}
-button:active {
-  background-color: rgb(130,35,21);
-}
-button:focus {
-  outline: 0;
-}
+
 input[type='text'] { 
-  font-size: 18px;
+  font-size: 20px;
   
 }
-.todo input[type="checkbox"] {
+
+
+.todo input[type="checkbox"]  {
   transform: scale(1.5) translateY(1px);
   margin: 0 16px 0 0;
   cursor: pointer;
 
 }
+
+
+input[type=checkbox]:checked + div { 
+  text-decoration: line-through;
+  color:rgb(63, 63, 63)
+}
+
 .todo-text input {
   padding: 4px;
+}
+
+#completed {
+  text-decoration: underline;
 }
 .todo-text {
   font-size: 20px;
@@ -91,6 +102,7 @@ input[type='text'] {
 .todo-completed {
   display: flex;
   margin: 10px 0;
+  text-decoration: underline;
 }
 .todo-actions {
   display: flex;
@@ -115,4 +127,7 @@ input[type='text'] {
   color:rgb(255, 255, 255);
   font-size: 30px;
 
+}
+.icon:hover {
+  color:rgb(138, 31, 15);
 }

@@ -5,11 +5,13 @@ import { FiEdit } from 'react-icons/fi';
 import { FaSave } from "react-icons/fa";
 import { AiOutlineFileAdd } from "react-icons/ai";
 const App = () => {
+
   const [todos, setTodos] = React.useState([]);
   const [todo, setTodo] = React.useState("");
   const [todoEditing, setTodoEditing] = React.useState(null);
   const [editingText, setEditingText] = React.useState("");
 
+  //nacteni ukolu z local storage
   React.useEffect(() => {
     const json = localStorage.getItem("todos");
     const loadedTodos = JSON.parse(json);
@@ -18,7 +20,8 @@ const App = () => {
     }
   }, 
   []);
-
+ 
+  //ulozeni ukolu do local storage  
   React.useEffect(() => {
     const json = JSON.stringify(todos);
     localStorage.setItem("todos", json);
@@ -31,8 +34,8 @@ const App = () => {
     const newTodo = {
 
       id: new Date().getTime(),
-      text: todo,
-      completed: false,
+      text:todo,
+      completed:false,
 
     };
 
@@ -78,24 +81,23 @@ const App = () => {
   }
 
   return (
+    //formulář
     <div id="todo-list">
+
       <h1>Úkolovník</h1>
+
       <form onSubmit={handleSubmit}>
-        <input
-        placeholder="Nový úkol..."
+        <input placeholder="Nový úkol..."
           type="text"
           onChange={(e) => setTodo(e.target.value)}
-          value={todo}
-        />
-
-      
+          value={todo}/>
         <button type="submit"><AiOutlineFileAdd className="icon-add"/></button>
       </form>
+      
       {todos.map((todo) => (
         <div key={todo.id} className="todo">
           <div className="todo-text">
             <input
-            
               type="checkbox"
               id="completed"
               checked={todo.completed}
@@ -104,6 +106,7 @@ const App = () => {
             {todo.id === todoEditing ? (
               <input
                 type="text"
+                id="label1"
                 onChange={(e) => setEditingText(e.target.value)}
               />
             ) : (
